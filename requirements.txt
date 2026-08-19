@@ -1,0 +1,26 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+python-dotenv==1.2.2
+pandas==2.2.3
+openpyxl==3.1.5
+# >=1.5.5 is a hard requirement of the MotherDuck extension — older DuckDB
+# builds are rejected at connect time with an explicit version error.
+duckdb>=1.5.5
+chromadb==1.5.9
+sqlglot==26.6.0
+pydantic==2.10.5
+
+# Model providers. Both are optional at runtime — llm.py imports whichever
+# LLM_PROVIDER selects, so a Mistral deployment does not need ollama installed
+# and a local setup does not need mistralai.
+ollama==0.6.2
+mistralai==2.9.0
+
+# mistralai 2.9 pins opentelemetry-semantic-conventions <0.61, but chromadb
+# needs >=0.65b0 and fails to import with the older one. The newer versions
+# work with both in practice, so pin them explicitly and install them LAST.
+# pip will print a dependency-conflict warning about this — it is expected.
+opentelemetry-api==1.44.0
+opentelemetry-sdk==1.44.0
+opentelemetry-semantic-conventions==0.65b0
