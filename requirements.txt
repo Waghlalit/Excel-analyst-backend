@@ -9,7 +9,7 @@ openpyxl==3.1.5
 duckdb>=1.5.5
 chromadb==1.5.9
 sqlglot==26.6.0
-pydantic==2.10.5
+pydantic==2.13.4
 
 # Model providers. Both are optional at runtime — llm.py imports whichever
 # LLM_PROVIDER selects, so a Mistral deployment does not need ollama installed

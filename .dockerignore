@@ -1,0 +1,14 @@
+.venv
+venv
+__pycache__
+*.pyc
+.git
+.env
+.env.*
+data
+*.duckdb
+*.log
+*.xlsx
+*.sse
+*.json
+README.md
